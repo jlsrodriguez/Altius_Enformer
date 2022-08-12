@@ -1,13 +1,18 @@
 #This readme file describes what altius_enformer.py is for and how it can be used. This model essentially predicts how a particular region contributes to the expression of a transcription start site, or TSS. It does this by centering the prediction window on a region described in the ROIs.csv file, then finds transcription start sites within 50 kb of the center of that region. For each transcription site, the program will predict the contributions within that region to the transcription start site. These scores are found in the ROI_X_scored_positions_TSS_Y.bed files.
 
 
+
+Original Publication: Effective gene expression prediction from sequence by integrating long-range interactions, Avsec et al.
+Website: https://www.nature.com/articles/s41592-021-01252-x
+
+
 Inputs: 
 
 ROIs.csv = positions of regions of interest
 pos_report.csv = complete list of transcription start sites across all chromosomes
 targets_human.txt = doc containing list of cells that one can use to predict for (CD8+ cells are line 4760)
-model_path = you must download and correct the path of the model in the script (near the top) (see the paper for details)
-genome.fa = fasta file containing the entire genome, see paper for details
+model_path = you must download and correct the path of the model in the script (near the top of altius_enformer.py) (Location: tfhub.dev/deepmind/enformer/1)
+genome.fa = fasta file containing the entire human genome (GRCh38/hg38), uploaded to Google Drive (https://drive.google.com/drive/folder/1rs20eRnR9yqWsuxPWOkQwCI1d4DHh3iQ)
 
 Outputs:
 
