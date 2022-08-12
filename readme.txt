@@ -24,6 +24,6 @@ How to use:
 6. When prompted for which line of targets_human.txt you want to use, type 4760.
 7. Find your files in the predictions folder after completion.
 
-TEST COMMIT
+
 
 
