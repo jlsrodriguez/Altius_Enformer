@@ -30,7 +30,8 @@ How to run the unit test:
 6. When prompted for which line of targets_human.txt you want to use, type 4760 (this points to the CD8+ dataset).
 7. Find your files in the predictions folder after completion.
 8. The files in the "predictions" folder should match those in "unit_test_predictions" exactly. If this is not the case, contact jrodriguez@altius.org.
-9. After completing
+9. After confirming the files are the same, change the transcript variable at the top of "altius_enformer.py" to equal "pd.read_csv('pos_report.csv')".
+10. Your program should be ready to use! Running the program is about the same as the unit test EXCEPT you will need to supply different ROIs in the ROIs.csv.
 
 
 
