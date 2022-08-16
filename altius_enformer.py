@@ -60,6 +60,8 @@ import support_func as sf
 model_path = '/home/jrodriguez/altius_enformer/tf_models/c444fdff3e183daf686869692c26e00391f6773c'
 #Genome Fasta
 fasta_file = 'genome.fa'
+#Load Transcripts
+transcripts = pd.read_csv('test_pos_report.csv')
 
 # Download targets from Basenji2 dataset
 # Cite: Kelley et al Cross-species regulatory sequence activity prediction. PLoS Comput. Biol. 16, e1008050 (2020).
@@ -261,8 +263,6 @@ def plot_tracks(tracks, interval, height=1.5):
   plt.tight_layout()
 
 """## Make predictions for a genetic sequence"""
-#Load transcripts
-transcripts = pd.read_csv('pos_report.csv')
 #Load Regions of Interest
 ROIs = pd.read_csv('ROIs.csv')
 #Initialize the answer variable defining the type of analysis performed

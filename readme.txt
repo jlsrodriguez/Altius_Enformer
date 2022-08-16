@@ -11,23 +11,27 @@ Inputs:
 ROIs.csv = positions of regions of interest
 pos_report.csv = complete list of transcription start sites across all chromosomes
 targets_human.txt = doc containing list of cells that one can use to predict for (CD8+ cells are line 4760)
-model_path = you must download and correct the path of the model in the script (near the top of altius_enformer.py) (Location: tfhub.dev/deepmind/enformer/1)
+model_path = you must download and correct the path of the model in the script (near the top of altius_enformer.py). Make sure that you also place the variables folder in the local folder of the saved_model.pb. (Location: tfhub.dev/deepmind/enformer/1)
 genome.fa = fasta file containing the entire human genome (GRCh38/hg38), uploaded to Google Drive (https://drive.google.com/drive/folder/1rs20eRnR9yqWsuxPWOkQwCI1d4DHh3iQ)
 
 Outputs:
 
 ROI_contribution_scores_X.bed = bed file containing scores for each 128-bp position (contributions scores are relevant to the ROI provided)
 ROI_local_transcripts_X.bed = bed file containing local transcripts to the ROI
-ROI_X_scored_positions_TSS_Y.bed = contribution scores for the TSS Y (references the TSS in local transcripts file from top to bottom) with respect to the ROI X (X being the index for the ROIs in ROIs.csv). Scores are given per 128 bp section.
+ROI_X_scored_positions_TSS_Y.bed = contribution scores for the TSS Y (references the TSS in local transcripts file from top to bottom) with respect to the ROI X (X being the index for the ROIs in ROIs.csv). Scores are given per 128 bp sections.
 
-How to use:
+
+How to run the unit test:
 1. Ensure all the required packages are installed. See requirements.txt.
 2. Make sure the model is installed and change the path in the altius_enformer.py file.
-3. After activating the environment, run "python3 altius_enformer.py".
-4. Create predictions folder by type "mkdir predictions" in the local directory.
+3. Create predictions folder by typing "mkdir predictions" in the local directory.
+4. After activating the environment, run "python3 altius_enformer.py".
 5. The program will ask you if you are going to look for variants, type N. The variant app still needs work.
-6. When prompted for which line of targets_human.txt you want to use, type 4760.
+6. When prompted for which line of targets_human.txt you want to use, type 4760 (this points to the CD8+ dataset).
 7. Find your files in the predictions folder after completion.
+8. The files in the "predictions" folder should match those in "unit_test_predictions" exactly. If this is not the case, contact jrodriguez@altius.org.
+9. After completing
+
 
 
 
